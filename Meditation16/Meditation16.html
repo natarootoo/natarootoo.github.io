@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<h1>Some Memorable Movies</h1>
+<h3><span class="ital">Meditation</span> (Nat Oesterly, 2023)</h3>
+	
+<div class="sideBySide">
+<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/IMG_6592 Medium.jpeg" alt="moulin rouge!">
+<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/IMG_6626 Medium.jpeg" alt="moulin rouge again">
+<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/IMG_6727 Medium.jpeg" alt="still moulin rouge">
+</div>
+	
+<p class= "filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore a neque consequuntur, eligendi! Similique nobis dignissimos quia aliquid in inventore numquam, veniam repellat ea incidunt mollitia ullam, voluptate explicabo iste accusamus eos unde iure ab quasi, eius rem velit culpa nostrum. Magni sunt itaque commodi, laborum nemo doloribus dolorum beatae.</p>
+	
+<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+	
+</body>
+<script>
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+var img01_clicked = false
+var img02_clicked = false
+var img03_clicked = false
+	
+var DTRT_text = document.getElementById("DTRT_text");
+	
+var DTRT00 = "In this film, I wanted to take the viewer to the spaces that one might imagine when they are meditating. This collection of images shows spaces in the film that relate to nature as this is where I personally tend to go when I meditate. I also included my friends within these spaces as they tend to be what bring me the most joy in life and I believe meditating should take one somewhere positive."  
+
+DTRT_text.innerHTML = DTRT00;
+	
+var DTRT01 = "The camera moves closely behind Michelle as she makes her way down the hill. Meditating might take one to a peaceful stroll. Her walking down the hill helps guide the film to the next scene. I wanted to include some moving shots as some of the shots are extremely still in this film and I felt it could benefit from a variety of shots."
+
+var DTRT02 = "Plants blowing in the wind felt especially peaceful to me. All of these shots include the sounds of waves becuase I thought that would help to give the film a breathing feeling. I especially like the waves against this shot because although it doesn't entirely match the image one is seeing, the movement kind of aligns with the sounds of the waves. Almost as if both the plant and the waves are breathing along with the person mediating."
+
+var DTRT03 = "Because meditation can take people to a place where they feel joy, I wanted to include this shot that looks like a memory. The shot is from the perspective of the person meditating, so we, the viewer are experiencing the memory with them. I also tried to pick a moment that felt universal - a day at the beach with friends."
+
+DTRT_text.innerHTML = DTRT00;
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+	
+}
+	
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}	
+	
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+	
+function revealButton (){
+	if (img01_clicked && img02_clicked && img03_clicked) {
+		console.log("REVEAL BUTTON")
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+	
+function gotoMovie(){
+	window.open("https://youtu.be/caMQra1MU14?si=YSG84rtDFzFjgENY", "blank");
+}
+
+
+
+</script>
+</html>
