@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.billie {
+    border-width: 4px;
+    border-style: solid;
+}
+.sideBySide {
+    display: flex;
+}
