@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>changingVideo.html</title>
+<link href="css/changingVideo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div>
+  <video id="vid" preload="auto" onClick="switchVideo()" muted="muted" loop="loop" >
+    <source src="video/hedgehogs_compressed_10sec.mp4" type="video/mp4">
+  </video>
+	</div>
+</body>
+	
+<script>
+var vid = document.getElementById("vid")
+	// references to the videos
+
+var hedgehogs = "video/hedgehogs_compressed_10sec.mp4";
+var meditation = "video/meditation10seccopy.mp4";
+var number_black = "video/number_black.mp4";
+var numbers_red = "video/numbers_red.mp4";
+
+var channel = 0;
+var pausedAt = 0;
+	
+function switchVideo (){
+	channel ++;
+	pausedAt = vid.currentTime;
+	console.log(vid.currentTime);
+	
+	if (channel == 1){
+		vid.src = hedgehogs;
+		vid.currentTime = pausedAt;
+	}
+	
+	if (channel == 2){
+		vid.src = numbers_red;
+		vid.currentTime = pausedAt;
+	}
+		
+	if (channel == 3){
+		vid.src = meditation;
+		vid.currentTime = pausedAt;
+	}
+		
+	if (channel == 4){
+		vid.src = number_black;
+		vid.currentTime = pausedAt;
+		channel = 0;
+	}
+		
+	vid.play();
+	vid.muted = false;
+}
+	
+</script>
+	
+</html>
