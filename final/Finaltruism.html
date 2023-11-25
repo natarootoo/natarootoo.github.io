@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update3</title>
+<link href="css/Truisms1.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<div>
+<video id="displayed_video" muted="muted" autoplay="autoplay" loop="loop"> <source src="video/IMG_7946.mp4" type="video/mp4">
+</video>
+</div>
+
+	
+<div class="centered_text">
+<h1 id="truism" onmouseover="onTruismText()" onmouseout="outTruismText()" onClick="changeVideo()"> EATING TOO MUCH IS CRIMINAL</h1>
+</div>
+
+<script>
+	
+	// 	stuff for sound
+	
+var mySound = new Audio("sounds/xan.mp3")
+
+var channel = 1;
+var pausedAT = 0;
+	
+	// references to the video element
+	
+var displayed_video = document.getElementById("displayed_video");
+	
+	// references to the videos
+	
+var max = "video/IMG_7946.mp4";
+var bathroom = "video/bathroom.mp4";
+
+	
+function onTruismText(){
+	document.getElementById("displayed_video").style.filter = "sepia(100%)";
+}	
+	
+function outTruismText(){
+	document.getElementById("displayed_video").style.filter = "sepia(0%)";
+}
+
+function changeVideo(){
+	console.log("will change video");
+	pausedAt = displayed_video.currentTime;
+	if (channel == 0){
+		displayed_video.src = max;
+		displayed_video.currentTime = pausedAt;
+		channel = 1;
+	}
+	else{
+		displayed_video.src = bathroom;
+		displayed_video.currentTime = pausedAt;
+		channel = 0;
+	}
+	
+	mySound.play();
+}
+	
+</script>
+	
+</body>
+<style>
+#displayed_video {
+		width: 100vw;
+		height: 100vh;
+		object-fit: cover;
+		postition: fixed;
+		top: 0;
+		left: 0;
+	}
+	.centered_text {
+		position:relative;
+		text-align: center;
+		justify-content: center;
+		margin-top: -15vh;
+	}	
+	#truism {
+   		font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+    	font-style: oblique;
+    	border-style: solid;
+    	border-color: #000000;
+		margin-left: 30%;
+		margin-right: 30%;
+		cursor: default;
+		background-color:antiquewhite 
+	
+}
+</style>
+	
+</html>
