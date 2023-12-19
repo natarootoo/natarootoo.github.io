@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page4</title>
+<link href="css/Meditation.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div>
+      <video width="1000" id="displayedVideo" muted="muted" autoplay="autoplay" loop="loop" >
+        <source src="video/4a.mp4" type="video/mp4">
+      </video>
+	</div>
+
+<div id="show4" class="centered_text">
+<h1 id="over" onClick="changeVideo()"><strong>clear your mind</strong></h1>
+</div>
+	
+<div id="show415" class="nextline">
+<p id="caption" ><a href="Page5a.html"><strong>distracted?</strong></a>&nbsp; &nbsp; &nbsp; or &nbsp; &nbsp; &nbsp;<a href="Page5b.html"><strong>focused.</strong></a></p>
+</div>
+	
+</body>	
+	
+<script>
+
+var displayed_video = document.getElementById("displayedVideo");
+
+	
+	var foura = "video/4a.mp4";
+	var fourb = "video/4b.mp4"
+	
+function changeVideo(){
+	console.log("will change video")
+	displayed_video.src = fourb
+}
+</script>	
+	
+	
+
+</html>

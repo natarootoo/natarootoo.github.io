@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page7a</title>
+<link href="css/Meditation.css" rel="stylesheet" type="text/css">
+
+		<style>
+        p {
+            text-align: center;
+        }
+		.textlink:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+    </style>
+</head>	
+	
+<body>
+<video id="displayedVideo" muted="muted" autoplay="autoplay">
+  <source src="video/7a.mp4" type="video/mp4">
+</video>
+
+<p id="caption">
+    <strong class="textlink" onclick="page8()">can't</strong> seem to focus?
+</p>
+
+<script>
+    document.getElementById('displayedVideo').addEventListener('ended', whenVideoEnds, false);
+
+    var caption = document.getElementById("caption");
+
+    caption.style.display = 'none';
+
+    function whenVideoEnds(e) {
+        caption.style.display = 'block';
+    }
+		
+	function page8() {
+		window.open ('page8.html','_self',false)
+	}
+
+	</script>
+
+	
+	
+</body>
+</html>
