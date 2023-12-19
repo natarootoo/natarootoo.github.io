@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page2</title>
+<link href="css/Meditation.css" rel="stylesheet" type="text/css">
+
+	<style>
+        p {
+            text-align: center;
+        }
+		.textlink:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+    </style>
+</head>	
+	
+<body>
+<video id="displayedVideo" muted="muted" autoplay="autoplay">
+    <source src="video/p2.mp4" type="video/mp4">
+</video>
+
+<p id="caption">
+ <a href="Page3.html"><strong class="textlink">distracted</strong></a> still?
+</p>
+
+<script>
+    document.getElementById('displayedVideo').addEventListener('ended', whenVideoEnds, false);
+
+    var caption = document.getElementById("caption");
+
+    caption.style.display = 'none';
+
+    function whenVideoEnds(e) {
+        caption.style.display = 'block';
+    }
+		
+	</script>
+	
+</body>
+</html>
